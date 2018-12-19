@@ -95,9 +95,9 @@ $(function() {
         })
     })
     $("button:last").click(function() {
-        var audio2= new Audio('http://www.imooc.com/upload/media/two.mp3')
-        audio.loop=loop;
-        audio.play();
+        var audio2= HTML5Audio('http://www.imooc.com/upload/media/two.mp3')
+       audio2.end(function() {
+       Html5Audio(cycleURL, 'http://www.imooc.com/upload/media/two.mp3')
+})
     })
 })
-

@@ -30,5 +30,25 @@
         <option value="page-c">3</option>
         <option value="page-d">4</option>
     </select>
+    
+    <script type="text/javascript">
+    /**
+     * 自适应页面大小
+     * @param  {[type]} doc [description]
+     * @param  {[type]} win [description]
+     * @return {[type]}     [description]
+     */
+    var docEl = document.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function() {
+            //自适应设置容器高度
+            var container = document.querySelector(".container")
+                //原始比例
+            var proportion = 900 / 1440;
+            container.style.height = container.clientWidth * proportion + "px";
+        };
+    window.addEventListener(resizeEvt, recalc, false);
+    document.addEventListener('DOMContentLoaded', recalc, false);
+    </script>
     </body>
 </html>
